@@ -1,0 +1,274 @@
+/* index.css - Global styles with modern dark theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Color palette - Orange/Red accent (#F54927) */
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-tertiary: #334155;
+
+  --color-primary: #F54927;
+  --color-primary-light: #FF6B4A;
+  --color-primary-dark: #D93D1F;
+  --color-secondary: #FF8C69;
+  --color-accent: #F54927;
+  --color-success: #10b981;
+
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #64748b;
+
+  --color-border: rgba(245, 73, 39, 0.25);
+  --color-border-hover: rgba(245, 73, 39, 0.5);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(245, 73, 39, 0.15);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* App container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Pipeline canvas */
+.pipeline-canvas {
+  flex: 1;
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, #1a1f35 100%);
+}
+
+/* ===== REACT FLOW HANDLE OVERRIDES - CLEAN CIRCLES ===== */
+.react-flow__handle {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  border: 3px solid !important;
+  background: #1e293b !important;
+  z-index: 100 !important;
+}
+
+.react-flow__handle-left {
+  left: -7px !important;
+  border-color: #F54927 !important;
+}
+
+.react-flow__handle-right {
+  right: -7px !important;
+  border-color: #FF6B4A !important;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.3);
+  background: #F54927 !important;
+}
+
+.react-flow__handle-right:hover {
+  background: #FF6B4A !important;
+}
+
+/* Edge styles */
+.react-flow__edge-path {
+  stroke: var(--color-accent) !important;
+  stroke-width: 2px !important;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: flow 0.5s linear infinite;
+}
+
+@keyframes flow {
+  from {
+    stroke-dashoffset: 10;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.react-flow__connection-line {
+  stroke: var(--color-accent) !important;
+  stroke-width: 2px !important;
+}
+
+/* Flow controls */
+.flow-controls {
+  background: var(--color-bg-secondary) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.flow-controls button {
+  background: var(--color-bg-secondary) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-secondary) !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.flow-controls button:hover {
+  background: var(--color-bg-tertiary) !important;
+}
+
+.flow-controls button svg {
+  fill: var(--color-text-secondary) !important;
+}
+
+/* Flow minimap */
+.flow-minimap {
+  background: var(--color-bg-secondary) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Alert styles */
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.alert-box {
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 32px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.alert-icon {
+  font-size: 28px;
+}
+
+.alert-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.alert-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: rgba(245, 73, 39, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.alert-stat-label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.alert-stat-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.alert-stat-value.success {
+  color: #22c55e;
+}
+
+.alert-stat-value.error {
+  color: #ef4444;
+}
+
+.alert-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #F54927 0%, #FF6B4A 100%);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.alert-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(245, 73, 39, 0.4);
+}
+
+.alert-button:active {
+  transform: translateY(0);
+}

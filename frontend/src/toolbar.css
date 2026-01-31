@@ -1,0 +1,56 @@
+/* toolbar.css - Styles for the pipeline toolbar */
+
+.pipeline-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.98) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border-bottom: 1px solid rgba(245, 73, 39, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;
+}
+
+.toolbar-header {
+    margin-bottom: 12px;
+}
+
+.toolbar-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0;
+}
+
+.title-icon {
+    font-size: 20px;
+    color: #F54927;
+}
+
+.toolbar-nodes {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.node-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.group-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.group-nodes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}

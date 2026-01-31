@@ -1,0 +1,145 @@
+/* BaseNode.css - Styles for the BaseNode component */
+
+.base-node {
+  min-width: 220px;
+  min-height: 100px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(245, 73, 39, 0.25);
+  border-radius: 12px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(245, 73, 39, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  overflow: visible;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.base-node:hover {
+  border-color: rgba(245, 73, 39, 0.5);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(245, 73, 39, 0.12);
+  transform: translateY(-2px);
+}
+
+.base-node-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(90deg, rgba(245, 73, 39, 0.15) 0%, rgba(255, 107, 74, 0.15) 100%);
+  border-bottom: 1px solid rgba(245, 73, 39, 0.2);
+  border-radius: 12px 12px 0 0;
+}
+
+.base-node-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.base-node-delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  opacity: 0;
+  /* Hidden by default for clean UX */
+}
+
+.base-node:hover .base-node-delete-btn {
+  opacity: 1;
+  /* Show on node hover */
+}
+
+.base-node-delete-btn:hover {
+  background: rgba(245, 73, 39, 0.2);
+  color: #F54927;
+}
+
+.base-node-icon {
+  font-size: 16px;
+}
+
+.base-node-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.base-node-content {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Handle Styles - Clean solid circles with orange theme */
+.handle {
+  width: 14px !important;
+  height: 14px !important;
+  background: #1e293b !important;
+  border: 3px solid #F54927 !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease !important;
+  z-index: 10 !important;
+}
+
+.handle:hover {
+  background: #F54927 !important;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(245, 73, 39, 0.5);
+}
+
+.handle-input {
+  border-color: #F54927 !important;
+}
+
+.handle-input:hover {
+  background: #F54927 !important;
+}
+
+.handle-output {
+  border-color: #FF6B4A !important;
+}
+
+.handle-output:hover {
+  background: #FF6B4A !important;
+  box-shadow: 0 0 10px rgba(255, 107, 74, 0.5);
+}
+
+/* React Flow handle overrides for clean circles */
+.react-flow__handle {
+  width: 14px !important;
+  height: 14px !important;
+  background: #1e293b !important;
+  border: 3px solid !important;
+  border-radius: 50% !important;
+}
+
+.react-flow__handle-left {
+  left: -7px !important;
+  border-color: #F54927 !important;
+}
+
+.react-flow__handle-right {
+  right: -7px !important;
+  border-color: #FF6B4A !important;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.3);
+}

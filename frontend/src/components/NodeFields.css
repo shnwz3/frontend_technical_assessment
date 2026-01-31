@@ -1,0 +1,75 @@
+/* NodeFields.css - Styles for form field components */
+
+.node-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.node-field-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.node-field-input,
+.node-field-select,
+.node-field-textarea,
+.node-field-number {
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #e2e8f0;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(245, 73, 39, 0.2);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.node-field-input:focus,
+.node-field-select:focus,
+.node-field-textarea:focus,
+.node-field-number:focus {
+    border-color: rgba(245, 73, 39, 0.6);
+    background: rgba(15, 23, 42, 0.8);
+    box-shadow: 0 0 0 3px rgba(245, 73, 39, 0.1);
+}
+
+.node-field-input::placeholder,
+.node-field-textarea::placeholder {
+    color: #475569;
+}
+
+.node-field-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+.node-field-select option {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 8px;
+}
+
+.node-field-textarea {
+    resize: vertical;
+    min-height: 60px;
+    max-height: 150px;
+}
+
+.node-field-number {
+    -moz-appearance: textfield;
+}
+
+.node-field-number::-webkit-outer-spin-button,
+.node-field-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
