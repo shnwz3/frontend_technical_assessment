@@ -1,5 +1,3 @@
-// submit.jsx - Submit, Save, and Reset buttons
-
 import { useState } from 'react';
 import { Rocket, BarChart3, AlertCircle, Save, RotateCcw, CheckCircle } from 'lucide-react';
 import { useStore } from './store.js';
@@ -34,7 +32,6 @@ export const SubmitButton = () => {
     };
 
     const handleSubmit = async () => {
-        // Auto-save before submitting
         savePipeline();
         
         setIsLoading(true);
@@ -110,7 +107,6 @@ export const SubmitButton = () => {
                 </button>
             </div>
 
-            {/* Save Notification Toast */}
             {saveNotification && (
                 <div className="save-toast">
                     <CheckCircle size={16} />

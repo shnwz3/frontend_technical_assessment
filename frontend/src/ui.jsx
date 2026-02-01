@@ -1,13 +1,9 @@
-// ui.jsx
-// Displays the drag-and-drop UI
-// --------------------------------------------------
 
 import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store.js';
 import { shallow } from 'zustand/shallow';
 
-// Import all node types
 import { InputNode } from './nodes/inputNode.jsx';
 import { LLMNode } from './nodes/llmNode.jsx';
 import { OutputNode } from './nodes/outputNode.jsx';
@@ -23,7 +19,6 @@ import 'reactflow/dist/style.css';
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
 
-// Register all node types
 const nodeTypes = {
   customInput: InputNode,
   llm: LLMNode,
@@ -72,8 +67,6 @@ export const PipelineUI = () => {
       if (event?.dataTransfer?.getData('application/reactflow')) {
         const appData = JSON.parse(event.dataTransfer.getData('application/reactflow'));
         const type = appData?.nodeType;
-
-        // check if the dropped element is valid
         if (typeof type === 'undefined' || !type) {
           return;
         }

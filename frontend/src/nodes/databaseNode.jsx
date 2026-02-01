@@ -1,4 +1,3 @@
-// databaseNode.jsx - Database Query Node
 
 import { useState } from 'react';
 import { Database } from 'lucide-react';

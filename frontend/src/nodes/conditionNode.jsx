@@ -1,4 +1,3 @@
-// conditionNode.jsx - Conditional Branching Node
 
 import { useState } from 'react';
 import { GitBranch } from 'lucide-react';

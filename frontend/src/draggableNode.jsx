@@ -1,4 +1,3 @@
-// draggableNode.jsx
 
 import './draggableNode.css';
 

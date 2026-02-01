@@ -1,4 +1,3 @@
-// llmNode.jsx
 
 import { Bot } from 'lucide-react';
 import { BaseNode } from '../components/BaseNode.jsx';

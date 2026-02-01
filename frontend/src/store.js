@@ -1,4 +1,3 @@
-// store.js - Manual Save/Reset workflow
 
 import { create } from "zustand";
 import {
@@ -10,7 +9,6 @@ import {
 
 const STORAGE_KEY = 'vectorshift-pipeline-save';
 
-// Load initial state from localStorage if available
 const getInitialState = () => {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) {
@@ -83,7 +81,6 @@ export const useStore = create((set, get) => ({
     });
   },
 
-  // Manual Save to localStorage
   savePipeline: () => {
     const { nodes, edges, nodeIDs } = get();
     const data = JSON.stringify({ nodes, edges, nodeIDs });
@@ -91,7 +88,6 @@ export const useStore = create((set, get) => ({
     return true;
   },
 
-  // Manual Load from localStorage
   loadPipeline: () => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
@@ -107,12 +103,10 @@ export const useStore = create((set, get) => ({
     return false;
   },
 
-  // Check if saved data exists
   hasSavedPipeline: () => {
     return localStorage.getItem(STORAGE_KEY) !== null;
   },
 
-  // Reset canvas to empty and clear saved data
   resetPipeline: () => {
     localStorage.removeItem(STORAGE_KEY);
     set({ nodes: [], edges: [], nodeIDs: {} });

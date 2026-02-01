@@ -1,4 +1,3 @@
-// timerNode.jsx - Timer/Delay Node
 
 import { useState } from 'react';
 import { Timer } from 'lucide-react';

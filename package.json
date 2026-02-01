@@ -1,0 +1,13 @@
+{
+    "name": "frontend-technical-assessment",
+    "version": "1.0.0",
+    "description": "Unified entry point for frontend and backend",
+    "scripts": {
+        "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
+        "start-frontend": "npm start --prefix frontend",
+        "start-backend": "cmd /c \"cd backend && python -m uvicorn main:app --reload --port 8000\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

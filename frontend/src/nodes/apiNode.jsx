@@ -1,5 +1,3 @@
-// apiNode.jsx - HTTP API Request Node
-
 import { useState } from 'react';
 import { Globe } from 'lucide-react';
 import { BaseNode } from '../components/BaseNode.jsx';

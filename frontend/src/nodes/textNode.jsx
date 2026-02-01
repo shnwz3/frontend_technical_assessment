@@ -1,4 +1,3 @@
-// textNode.jsx - With dynamic sizing and variable detection
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Handle, Position } from 'reactflow';
@@ -14,14 +13,12 @@ export const TextNode = ({ id, data }) => {
   const textareaRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 220, height: 100 });
 
-  // Extract unique variable names from the text
   const variables = useMemo(() => {
     const matches = [...currText.matchAll(VARIABLE_REGEX)];
     const uniqueVars = [...new Set(matches.map(match => match[1]))];
     return uniqueVars;
   }, [currText]);
 
-  // Auto-resize based on text content
   useEffect(() => {
     if (textareaRef.current) {
       const textarea = textareaRef.current;
@@ -57,7 +54,6 @@ export const TextNode = ({ id, data }) => {
         minHeight: dimensions.height
       }}
     >
-      {/* Variable Input Handles on the left */}
       {variables.map((variable, index) => {
         const topPercent = variables.length === 1
           ? 50

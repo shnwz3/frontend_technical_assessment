@@ -1,4 +1,3 @@
-// inputNode.jsx
 
 import { useState } from 'react';
 import { Download } from 'lucide-react';
